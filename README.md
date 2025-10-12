@@ -7,9 +7,12 @@ From the QABrain website, registration and blog creation were completed. The dra
 2.node -v
 
 3.Install Visual Studio Code
+
 4.Turn on auto save for VS code
+
 5.Open vs code in a designated folder. From the terminal
 npx playwright test --headed
+
 6.show the report - 
 npx playwright show-report
 
