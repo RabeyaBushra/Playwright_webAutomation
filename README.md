@@ -1,7 +1,7 @@
 From the QABrain website, registration and blog creation were completed. The draft blogs were submitted and deleted, the trashed blogs were permanently deleted, the remaining ones were reverted to draft, and finally, the logout flow was covered.
 
-#Pre-requisites:-
-/n
+##Pre-requisites:-
+
 1.Install Node.js
 2.node -v
 3.Install Visual Studio Code
