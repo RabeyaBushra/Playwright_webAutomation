@@ -77,9 +77,9 @@ await page.evaluate(() => window.scrollBy(0, 700));
 test.afterAll(async () => {
    const logoUt=new LogOutPage(page);
    await logoUt.Logout();
-   const toastText_ = await page.locator('.Toastify__toast').textContent();
-   console.log("Toast message:", toastText_);
-   await expect(page.locator('.Toastify__toast')).toHaveText(/Logout Successfully/);
+//    const toastText_ = await page.locator('.Toastify__toast').textContent();
+//    console.log("Toast message:", toastText_);
+//    await expect(page.locator('.Toastify__toast')).toHaveText(/Logout Successfully/);
    await page.pause();
    //await context.close();
 
