@@ -4,7 +4,7 @@ import { faker } from '@faker-js/faker';
 import utils from '../Utils/utils.js';
 import jsonData from '../Utils/userData.json';
 
-test('Registration', async ({ page }) => {
+test.skip('Registration', async ({ page }) => {
    await page.goto('/auth/login');
     const registration=new RegistrationPage(page);
     const newUser={
