@@ -7,6 +7,7 @@ class LogOutPage {
     }
 
     async Logout() {
+        await this.page.waitForTimeout(5000);
         await this.logoutbtn.click();
         await this.yesbtn.click();
     }
