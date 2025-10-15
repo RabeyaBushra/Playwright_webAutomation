@@ -17,9 +17,8 @@ class CreateBlogPage {
     this.submitbtn=page.getByRole('button', { name: 'SUBMIT' });
   }
   async createblog_saveasDraft() {
-    await this.page.waitForTimeout(5000);
-  //await this.page.waitForSelector('text=Create a new blog', { state: 'visible', timeout: 30000 });
-
+  
+  await this.createBlog_.waitFor({ state: 'visible', timeout: 60000 });
   await this.createBlog_.click();
   await this.page.waitForTimeout(5000);
   await this.blog.nth(0).click();
