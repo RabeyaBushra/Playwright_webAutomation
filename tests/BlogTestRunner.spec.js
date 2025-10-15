@@ -12,7 +12,7 @@ let context;
 let browser;
 
 test.beforeAll(async () => {
-    browser = await chromium.launch({ headless:true }); 
+    browser = await chromium.launch({ headless:false }); 
     context = await browser.newContext();
     page = await context.newPage();
     const login=new LoginPage(page);
