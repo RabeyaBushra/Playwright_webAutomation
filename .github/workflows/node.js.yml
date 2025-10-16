@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         node-version: [18.x]
-        spec-file: [ "BlogTestRunner.spec.js", "LoginTestRunner.spec.js", "RegisterTestRunner.spec.js" ]
+        spec-file: ["1_RegistrationTestRunner.spec.js", "BlogTestRunner.spec.js" ]
 
     steps:
       - name: Checkout repository
