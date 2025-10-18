@@ -1,6 +1,6 @@
 import { test, expect, chromium } from '@playwright/test';
 import CreateBlogPage from '../Pages/CreateBlogPage.js';
-import jsonData from '../Utils/userData.json';
+import jsonData from '../Utils/userData.json' assert { type: 'json' };
 import LoginPage from '../Pages/LoginPage.js';
 import DraftBlogPage from '../Pages/DraftBlogPage.js';
 import PendingBlogPage from '../Pages/PendingBlogPage.js';
@@ -12,7 +12,7 @@ let context;
 let browser;
 
 test.beforeAll(async () => {
-    browser = await chromium.launch({ headless:true}); 
+    browser = await chromium.launch({ headless:false}); 
     context = await browser.newContext();
     page = await context.newPage();
     const login=new LoginPage(page);
@@ -38,22 +38,22 @@ const blogPage = new CreateBlogPage(page);
 //  await expect(page.locator('.Toastify__toast')).toHaveText(/Blog created successfully/);
 
 });
-// test('Draf blog submit_delete', async () => {
-// await page.evaluate(() => window.scrollBy(0, 700));
-//  const drafblog = new DraftBlogPage(page);
-//  await drafblog.draftblog_submit();
-// //  await page.waitForSelector('.Toastify__toast', { state: 'visible', timeout: 10000 });
-// //  const toastText = await page.locator('.Toastify__toast').textContent();
-// //  console.log("Toast message:", toastText);
-// //  await expect(page.locator('.Toastify__toast')).toHaveText(/Blog is updated successfully/);
-// // await drafblog.draftblog_Delete();
-// //  await page.waitForSelector('.Toastify__toast', { state: 'visible', timeout: 10000 });
-// //  const toastText_ = await page.locator('.Toastify__toast').textContent();
-// //  console.log("Toast message:", toastText);
-// //  await expect(page.locator('.Toastify__toast')).toHaveText(/Blog is trashed successfully/);
+test('Draf blog submit_delete', async () => {
+await page.evaluate(() => window.scrollBy(0, 700));
+ const drafblog = new DraftBlogPage(page);
+ await drafblog.draftblog_submit();
+//  await page.waitForSelector('.Toastify__toast', { state: 'visible', timeout: 10000 });
+//  const toastText = await page.locator('.Toastify__toast').textContent();
+//  console.log("Toast message:", toastText);
+//  await expect(page.locator('.Toastify__toast')).toHaveText(/Blog is updated successfully/);
+// await drafblog.draftblog_Delete();
+//  await page.waitForSelector('.Toastify__toast', { state: 'visible', timeout: 10000 });
+//  const toastText_ = await page.locator('.Toastify__toast').textContent();
+//  console.log("Toast message:", toastText);
+//  await expect(page.locator('.Toastify__toast')).toHaveText(/Blog is trashed successfully/);
  
 
-// });
+});
 // test('Trash blog revert to draft', async () => {
 //  const trashblog = new TrashBlogPage(page);
 //  await trashblog.Trashblog_reverttoDraft();

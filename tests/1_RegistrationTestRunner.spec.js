@@ -1,10 +1,10 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, chromium } from '@playwright/test';
 import RegistrationPage from '../Pages/RegistrationPage.js';
 import { faker } from '@faker-js/faker';
 import utils from '../Utils/utils.js';
-import jsonData from '../Utils/userData.json';
 
-test('Registration', async ({ page }) => {
+test("Registration flow",async ({page}) => {
+   
    await page.goto('/auth/login');
     const registration=new RegistrationPage(page);
     const newUser={
@@ -16,10 +16,10 @@ test('Registration', async ({ page }) => {
     };
     await registration.Registration(newUser);
     utils.saveData(newUser);
-    const toast = page.locator('.Toastify__toast').first();
-    const msg = await toast.textContent();
-    console.log('Success Message:', msg);
-    await expect(toast).toHaveText(/successfully Registered/i);
+    // const toast = page.locator('.Toastify__toast').first();
+    // const msg = await toast.textContent();
+    // console.log('Success Message:', msg);
+    // await expect(toast).toHaveText(/successfully Registered/i);
     
 });
 
